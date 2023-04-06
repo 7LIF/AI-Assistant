@@ -1,6 +1,9 @@
 # run in bash >>>>> $ python jarvis.py
 
 import pyttsx3
+import datetime
+
+
 
 # Create the object engine to initialize the text-to-speech
 engine = pyttsx3.init()
@@ -14,7 +17,15 @@ engine.setProperty('rate', 170)                                                 
 engine.setProperty('volume', 1.0)                                                                                       # Set the volume (between 0 and 1)
 engine.setProperty('pitch', 80)                                                                                         # Set the pitch of the voice to a lower value (entoação/tom de voz)
 
-# Test the configured voice
-engine.say('This is JARVIS')
-engine.runAndWait()
 
+
+# function speak
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
+
+def time():
+    current_time = datetime.datetime.now().strftime("%I:%M:%S")
+    speak(current_time)
+
+time()
