@@ -19,7 +19,7 @@ engine.setProperty('pitch', 80)                                                 
 
 
 
-# function speak
+# function text-to-speech
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
