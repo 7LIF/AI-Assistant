@@ -4,10 +4,8 @@ import pyttsx3
 import datetime
 
 
-
 # Create the object engine to initialize the text-to-speech
 engine = pyttsx3.init()
-
 
 
 # Set properties for the voice
@@ -18,12 +16,12 @@ engine.setProperty('volume', 1.0)                                               
 engine.setProperty('pitch', 80)                                                                                         # Set the pitch of the voice to a lower value (entoação/tom de voz)
 
 
-
-# function text-to-speech
+# function text-to-speech 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+# function to get current time
 def time():
     current_time = datetime.datetime.now().strftime("%I:%M:%S")
     speak(current_time)
